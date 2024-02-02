@@ -1,8 +1,11 @@
 import './App.css'
 
+import Copy from './images/copy.svg'
+import Renew from './images/renew.svg'
+
 function App() {
   return (
-    <>
+    <body>
       <main>
         <section className="hero">
           <h1 className="title">Gerador de senha</h1>
@@ -18,10 +21,10 @@ function App() {
             </div>
             <div className="actions">
               <button id="copy-1">
-                <img src="copy.svg" width="42" />
+                <img src={Copy} width="42" />
               </button>
               <button id="renew">
-                <img src="renew.svg" width="42" />
+                <img src={Renew} width="42" />
               </button>
             </div>
           </div>
@@ -61,7 +64,7 @@ function App() {
           <button id="copy-2">Copiar senha</button>
         </div>
       </main>
-    </>
+    </body>
   )
 }
 
