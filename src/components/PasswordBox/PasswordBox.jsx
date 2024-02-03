@@ -7,10 +7,10 @@ export default function PasswordBox() {
     return (
         <section className="box">
             <div className={styles.password}>
-                <div className="text">
+                <div className={styles.text}>
                     <input type="text" name="password" id="password" />
                 </div>
-                <div className="actions">
+                <div className={styles.actions}>
                     <button id="copy-1">
                         <img src={Copy} width="42" />
                     </button>
