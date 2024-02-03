@@ -1,13 +1,7 @@
 import { useState } from 'react'
 import styles from './Customize.module.css'
 
-export default function Customize({ passwordLength, handleChangePasswordLength, generatePassword, handleUpperCaseCheck, handleNumbersCheck, handleSymbolsCheck }) {
-
-    const handlePasswordUpdate = (e) => {
-        handleChangePasswordLength(e)
-        generatePassword()
-    }
-
+export default function Customize({ passwordLength, handleChangePasswordLength, handleUpperCaseCheck, handleNumbersCheck, handleSymbolsCheck }) {
     return (
         <section className={`box ${styles.customize}`}>
             <h3 className={styles.customize_title}>Personalizar</h3>
@@ -20,7 +14,7 @@ export default function Customize({ passwordLength, handleChangePasswordLength, 
                             min={4}
                             max={50}
                             className={styles.slider}
-                            onChange={(e) => handlePasswordUpdate(e)}
+                            onChange={(e) => handleChangePasswordLength(e)}
                         />
                     </form>
                 </div>
