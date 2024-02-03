@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import Customize from './components/Customize/Customize'
 import Header from './components/Header/Header'
 import PasswordBox from './components/PasswordBox/PasswordBox'
-import SubmitButton from './components/SubmitButton/SubmitButton'
+import CopyPasswordButton from './components/CopyPasswordButton/CopyPasswordButton'
 
 function App() {
   const [password, setPassword] = useState('')
@@ -46,8 +46,6 @@ function App() {
   const generatePassword = () => {
     updateChars()
 
-    console.log(chars)
-
     for (let i = 0; i < passwordLength; i++) {
       let passwordChar = Math.floor(Math.random() * chars.length)
       setPassword(password + passwordChar)
@@ -58,12 +56,20 @@ function App() {
     setPasswordLength(e.target.value)
   }
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText(password)
+  }
+
   return (
     <body>
       <main>
         <Header />
 
-        <PasswordBox password={password} />
+        <PasswordBox
+          password={password}
+          handleCopy={handleCopy}
+          generatePassword={generatePassword}
+        />
 
         <Customize
           passwordLength={passwordLength}
@@ -74,7 +80,9 @@ function App() {
           handleSymbolsCheck={handleSymbolsCheck}
         />
 
-        <SubmitButton />
+        <CopyPasswordButton
+          handleCopy={handleCopy}
+        />
       </main>
     </body>
   )
