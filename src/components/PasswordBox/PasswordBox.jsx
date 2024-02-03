@@ -3,12 +3,12 @@ import styles from './PasswordBox.module.css'
 import Copy from '../../../src/images/copy.svg'
 import Renew from '../../../src/images/renew.svg'
 
-export default function PasswordBox() {
+export default function PasswordBox({ password }) {
     return (
         <section className="box">
             <div className={styles.password}>
                 <div className={styles.text}>
-                    <input type="text" name="password" id="password" />
+                    <input type="text" value={password} />
                 </div>
                 <div className={styles.actions}>
                     <button id="copy-1">
