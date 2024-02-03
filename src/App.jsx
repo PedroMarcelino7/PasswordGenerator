@@ -1,37 +1,15 @@
 import './App.css'
-
-import Copy from './images/copy.svg'
-import Renew from './images/renew.svg'
+import Header from './components/Header/Header'
+import PasswordBox from './components/PasswordBox/PasswordBox'
+import SubmitButton from './components/SubmitButton/SubmitButton'
 
 function App() {
   return (
     <body>
       <main>
-        <section className="hero">
-          <h1 className="title">Gerador de senha</h1>
-          <p className="subtitle">
-            Utilize o nosso gerador online para criar uma senha forte e segura.
-          </p>
-        </section>
+        <Header />
 
-        <section className="box">
-          <div className="password">
-            <div className="text">
-              <input type="text" name="password" id="password" />
-            </div>
-            <div className="actions">
-              <button id="copy-1">
-                <img src={Copy} width="42" />
-              </button>
-              <button id="renew">
-                <img src={Renew} width="42" />
-              </button>
-            </div>
-          </div>
-          <div className="security-indicator">
-            <div id="security-indicator-bar" className="bar"></div>
-          </div>
-        </section>
+        <PasswordBox />
 
         <section className="box customize">
           <h3 className="title">Personalizar</h3>
@@ -60,9 +38,7 @@ function App() {
           </div>
         </section>
 
-        <div className="submit">
-          <button id="copy-2">Copiar senha</button>
-        </div>
+        <SubmitButton />
       </main>
     </body>
   )
