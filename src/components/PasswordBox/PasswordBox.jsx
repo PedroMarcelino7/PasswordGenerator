@@ -1,7 +1,5 @@
 import styles from './PasswordBox.module.css'
-
-import Copy from '../../../src/images/copy.svg'
-import Renew from '../../../src/images/renew.svg'
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 export default function PasswordBox({ password, handleCopy, generatePassword }) {
     return (
@@ -21,13 +19,13 @@ export default function PasswordBox({ password, handleCopy, generatePassword }) 
                     <button
                         onClick={() => handleCopy()}
                     >
-                        <img src={Copy} width="42" />
+                        <i class="bi bi-copy"></i>
                     </button>
 
                     <button
                         onClick={() => generatePassword()}
                     >
-                        <img src={Renew} width="42" />
+                        <i class="bi bi-arrow-clockwise"></i>
                     </button>
                 </div>
             </div>
