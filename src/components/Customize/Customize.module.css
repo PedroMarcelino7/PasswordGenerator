@@ -1,0 +1,96 @@
+.customize {
+    padding: 1rem 1.5rem;
+}
+
+.customize .customize_title {
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+}
+
+.customize .actions {
+    display: flex;
+    gap: 3rem;
+    color: #828282;
+}
+
+.customize .password_length {
+    flex: 1;
+}
+
+.customize .password_length .slider {
+    appearance: none;
+    height: 10px;
+    background: #dddddd;
+    outline: none;
+    border-radius: 8px;
+    width: 100%;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    margin-top: 1rem;
+    cursor: pointer;
+
+    -webkit-appearance: 1rem;
+}
+
+.customize .password_length .slider:hover {
+    opacity: 1;
+}
+
+.checkbox_container {
+    display: block;
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    user-select: none;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.checkbox_container input {
+    position: absolute;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox_container .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #dddddd;
+    transition: all 0.2s;
+}
+
+.checkbox_container:hover input~.checkmark {
+    background-color: #cccccc;
+}
+
+.checkbox_container input:checked~.checkmark {
+    background-color: #61DAFB;
+}
+
+.checkbox_container .checkmark:after {
+    content: "";
+    display: none;
+    position: absolute;
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 13px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox_container input:checked~.checkmark:after {
+    display: block;
+}
