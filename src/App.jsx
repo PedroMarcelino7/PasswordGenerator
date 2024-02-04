@@ -64,6 +64,8 @@ function App() {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(password)
+
+    handleShowLabel()
   }
 
   const handleShowLabel = () => {
@@ -98,7 +100,7 @@ function App() {
           generatePassword={generatePassword}
         />
 
-        {showLabel && <InformationLabel text={'teste'} />}
+        {showLabel && <InformationLabel />}
       </main>
     </body>
   )
