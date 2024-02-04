@@ -4,6 +4,7 @@ import Customize from './components/Customize/Customize'
 import Header from './components/Header/Header'
 import PasswordBox from './components/PasswordBox/PasswordBox'
 import GenerateButton from './components/GenerateButton/GenerateButton'
+import InformationLabel from './components/InformationLabel/InformationLabel'
 
 function App() {
   const [password, setPassword] = useState('')
@@ -11,6 +12,7 @@ function App() {
   const [upperCaseCheck, setUpperCaseCheck] = useState(false)
   const [numbersCheck, setNumbersCheck] = useState(false)
   const [symbolsCheck, setSymbolsCheck] = useState(false)
+  const [showLabel, setShowLabel] = useState(false)
 
   let chars = 'abcdefghijklmnopqrstuvwxyz'
   const charsUpperCase = chars.toUpperCase()
@@ -64,6 +66,14 @@ function App() {
     navigator.clipboard.writeText(password)
   }
 
+  const handleShowLabel = () => {
+    setShowLabel(true)
+
+    setTimeout(() => {
+      setShowLabel(false)
+    }, 3000)
+  }
+
   return (
     <body>
       <main>
@@ -73,6 +83,7 @@ function App() {
           password={password}
           handleCopy={handleCopy}
           generatePassword={generatePassword}
+          handleShowLabel={handleShowLabel}
         />
 
         <Customize
@@ -86,6 +97,8 @@ function App() {
         <GenerateButton
           generatePassword={generatePassword}
         />
+
+        {showLabel && <InformationLabel text={'teste'} />}
       </main>
     </body>
   )

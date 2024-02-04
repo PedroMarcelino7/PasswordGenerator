@@ -1,0 +1,21 @@
+.information_box {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 25%;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.information {
+    padding-inline: 2rem;
+    padding-block: 0.75rem;
+    border-radius: 10px;
+    background-color: rgba(255, 0, 0, 0.55);
+}
+
+.information p {
+    color: #fff;
+    font-size: 2rem;
+}

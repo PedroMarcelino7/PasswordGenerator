@@ -6,7 +6,7 @@ export default function GenerateButton({ generatePassword }) {
             <button
                 onClick={() => generatePassword()}
             >
-                Gerar senha
+                Generate Password
             </button>
         </div>
     )

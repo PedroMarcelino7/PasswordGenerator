@@ -1,7 +1,12 @@
 import styles from './PasswordBox.module.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-export default function PasswordBox({ password, handleCopy, generatePassword }) {
+export default function PasswordBox({ password, handleCopy, generatePassword, handleShowLabel }) {
+    const handleCopyFunctions = () => {
+        handleCopy()
+        handleShowLabel()
+    }
+
     return (
         <section
             className="box"
@@ -17,7 +22,7 @@ export default function PasswordBox({ password, handleCopy, generatePassword }) 
 
                 <div className={styles.actions}>
                     <button
-                        onClick={() => handleCopy()}
+                        onClick={() => handleCopyFunctions()}
                     >
                         <i class="bi bi-copy"></i>
                     </button>
