@@ -13,6 +13,9 @@ function App() {
   const [numbersCheck, setNumbersCheck] = useState(false)
   const [symbolsCheck, setSymbolsCheck] = useState(false)
   const [showLabel, setShowLabel] = useState(false)
+  const [passwordStrength, setPasswordStrength] = useState(0)
+  const [securityBarWidth, setSecurityBarWidth] = useState(0)
+  const [securityBarColor, setSecurityBarColor] = useState('')
 
   let chars = 'abcdefghijklmnopqrstuvwxyz'
   const charsUpperCase = chars.toUpperCase()
@@ -76,6 +79,49 @@ function App() {
     }, 3000)
   }
 
+  const handlePasswordStrength = () => {
+    setPasswordStrength(0)
+    let strength = Number(passwordLength) + 5;
+
+    if (upperCaseCheck) {
+      strength += 10;
+    }
+
+    if (numbersCheck) {
+      strength += 15;
+    }
+
+    if (symbolsCheck) {
+      strength += 20;
+    }
+
+    console.log(strength)
+
+    setPasswordStrength(strength);
+  }
+
+  useEffect(() => {
+    handlePasswordStrength();
+  }, [passwordLength, upperCaseCheck, numbersCheck, symbolsCheck]);
+
+  useEffect(() => {
+    if (passwordStrength < 10) {
+      setSecurityBarColor('black');
+    } else if (passwordStrength <= 30) {
+      setSecurityBarColor('red');
+    } else if (passwordStrength <= 55) {
+      setSecurityBarColor('orange');
+    } else if (passwordStrength <= 80) {
+      setSecurityBarColor('yellow');
+    } else if (passwordStrength <= 90) {
+      setSecurityBarColor('green');
+    } else {
+      setSecurityBarColor('lime')
+    }
+
+    setSecurityBarWidth(passwordStrength);
+  }, [passwordStrength]);
+
   return (
     <body>
       <main>
@@ -86,6 +132,8 @@ function App() {
           handleCopy={handleCopy}
           generatePassword={generatePassword}
           handleShowLabel={handleShowLabel}
+          securityBarWidth={securityBarWidth}
+          securityBarColor={securityBarColor}
         />
 
         <Customize

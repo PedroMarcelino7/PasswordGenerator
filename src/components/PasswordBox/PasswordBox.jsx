@@ -1,7 +1,7 @@
 import styles from './PasswordBox.module.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-export default function PasswordBox({ password, handleCopy, generatePassword }) {
+export default function PasswordBox({ password, handleCopy, generatePassword, securityBarWidth, securityBarColor }) {
     return (
         <section
             className="box"
@@ -15,7 +15,9 @@ export default function PasswordBox({ password, handleCopy, generatePassword }) 
                     <input type="text" value={password} />
                 </div>
 
-                <div className={styles.actions}>
+                <div
+                    className={styles.actions}
+                >
                     <button
                         onClick={() => handleCopy()}
                     >
@@ -29,8 +31,17 @@ export default function PasswordBox({ password, handleCopy, generatePassword }) 
                     </button>
                 </div>
             </div>
-            <div className={styles.security_indicator}>
-                <div id="security-indicator-bar" className={styles.bar}></div>
+
+            <div
+                className={styles.security_indicator}
+            >
+                <div
+                    className={styles.bar}
+                    style={{
+                        width: `${securityBarWidth}%`,
+                        backgroundColor: securityBarColor
+                    }}>
+                </div>
             </div>
         </section>
     )
