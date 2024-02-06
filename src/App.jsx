@@ -50,7 +50,6 @@ function App() {
 
   const generatePassword = () => {
     updateChars()
-    console.log('password length: ' + passwordLength)
 
     let passwordChar = ''
 
@@ -94,8 +93,6 @@ function App() {
     if (symbolsCheck) {
       strength += 20;
     }
-
-    console.log(strength)
 
     setPasswordStrength(strength);
   }

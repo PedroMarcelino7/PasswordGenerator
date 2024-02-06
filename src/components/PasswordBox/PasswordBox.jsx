@@ -6,18 +6,12 @@ export default function PasswordBox({ password, handleCopy, generatePassword, se
         <section
             className="box"
         >
-            <div
-                className={styles.password}
-            >
-                <div
-                    className={styles.text}
-                >
+            <div className={styles.password}>
+                <div className={styles.text}>
                     <input type="text" value={password} />
                 </div>
 
-                <div
-                    className={styles.actions}
-                >
+                <div className={styles.actions}>
                     <button
                         onClick={() => handleCopy()}
                     >

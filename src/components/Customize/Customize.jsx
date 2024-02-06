@@ -22,9 +22,7 @@ export default function Customize({ passwordLength, handleChangePasswordLength, 
 
                 <div>
                     <label className={styles.checkbox_container}>
-                        <span
-                            className="text"
-                        >
+                        <span className="text">
                             Uppercase
                         </span>
                         <input
@@ -35,9 +33,7 @@ export default function Customize({ passwordLength, handleChangePasswordLength, 
                     </label>
 
                     <label className={styles.checkbox_container}>
-                        <span
-                            className="text"
-                        >
+                        <span className="text">
                             Numbers
                         </span>
                         <input
@@ -48,9 +44,7 @@ export default function Customize({ passwordLength, handleChangePasswordLength, 
                     </label>
 
                     <label className={styles.checkbox_container}>
-                        <span
-                            className="text"
-                        >
+                        <span className="text">
                             Symbols
                         </span>
                         <input
